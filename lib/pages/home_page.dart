@@ -149,7 +149,7 @@ class _HomePageState extends State<HomePage> {
             margin: EdgeInsets.only(top: 10),
             height: 200,
             color: Colors.white,
-            padding: EdgeInsets.only(top: 10, bottom: 10),
+            padding: EdgeInsets.only(top: 10, bottom: 10,left: 10),
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
@@ -193,18 +193,81 @@ class _HomePageState extends State<HomePage> {
                     storyImage: 'assets/images/feed_5.jpeg',
                     userImage: 'assets/images/feed_5.jpeg',
                     userName: 'NoName'),
-
               ],
             ),
           ),
 
           // post feed
           makeFeed(
-            userName: "User Two",
-            userImage:'assets/images/user_2.jpeg',
-            feedTime: '1 hr ago',
-            feedText: 'All the Lorem Ipsum generators on the repeat predefined'
-          )
+              userName: "User Two",
+              userImage: 'assets/images/user_1.jpeg',
+              feedTime: '1 hr ago',
+              feedText:
+                  'All the Lorem Ipsum generators on the repeat predefined',
+              feedImage: 'assets/images/user_1.jpeg'),
+          makeFeed(
+              userName: "User Two",
+              userImage: 'assets/images/user_2.jpeg',
+              feedTime: '1 hr ago',
+              feedText:
+                  'All the Lorem Ipsum generators on the repeat predefined',
+              feedImage: 'assets/images/user_2.jpeg'),
+          makeFeed(
+              userName: "User Two",
+              userImage: 'assets/images/user_3.jpeg',
+              feedTime: '1 hr ago',
+              feedText:
+                  'All the Lorem Ipsum generators on the repeat predefined',
+              feedImage: 'assets/images/user_3.jpeg'),
+          makeFeed(
+              userName: "User Two",
+              userImage: 'assets/images/user_4.jpeg',
+              feedTime: '1 hr ago',
+              feedText:
+                  'All the Lorem Ipsum generators on the repeat predefined',
+              feedImage: 'assets/images/user_4.jpeg'),
+          makeFeed(
+              userName: "User Two",
+              userImage: 'assets/images/user_5.jpeg',
+              feedTime: '1 hr ago',
+              feedText:
+                  'All the Lorem Ipsum generators on the repeat predefined',
+              feedImage: 'assets/images/user_5.jpeg'),
+          makeFeed(
+              userName: "User Two",
+              userImage: 'assets/images/user_1.jpeg',
+              feedTime: '1 hr ago',
+              feedText:
+                  'All the Lorem Ipsum generators on the repeat predefined',
+              feedImage: 'assets/images/user_1.jpeg'),
+          makeFeed(
+              userName: "User Two",
+              userImage: 'assets/images/user_2.jpeg',
+              feedTime: '1 hr ago',
+              feedText:
+                  'All the Lorem Ipsum generators on the repeat predefined',
+              feedImage: 'assets/images/user_2.jpeg'),
+          makeFeed(
+              userName: "User Two",
+              userImage: 'assets/images/user_3.jpeg',
+              feedTime: '1 hr ago',
+              feedText:
+                  'All the Lorem Ipsum generators on the repeat predefined',
+              feedImage: 'assets/images/user_3.jpeg'),
+          makeFeed(
+              userName: "User Two",
+              userImage: 'assets/images/user_4.jpeg',
+              feedTime: '1 hr ago',
+              feedText:
+                  'All the Lorem Ipsum generators on the repeat predefined',
+              feedImage: 'assets/images/user_4.jpeg'),
+          makeFeed(
+              userName: "User Two",
+              userImage: 'assets/images/user_5.jpeg',
+              feedTime: '1 hr ago',
+              feedText:
+                  'All the Lorem Ipsum generators on the repeat predefined',
+              feedImage: 'assets/images/user_5.jpeg'),
         ],
       ),
     );
@@ -257,34 +320,246 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget makeFeed({userName,userImage,feedTime,feedText,FeedImage}){
+  Widget makeFeed({userName, userImage, feedTime, feedText, feedImage}) {
     return Container(
       margin: EdgeInsets.only(top: 10),
       color: Colors.white,
-        child: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.only(left: 10,right: 10),
-              color: Column(
-                children: [
-                  SizedBox(height: 10,),
-Row(
-  children: [
-    Container(
-      width: 50,
-      height: 50,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          im
-        ),
-    )
-  ],
-)
-                ],
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // #header
+          Container(
+            padding: EdgeInsets.only(left: 10, right: 10),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                  image: AssetImage(userImage),
+                                  fit: BoxFit.cover)),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              userName,
+                              style: TextStyle(
+                                  color: Colors.grey[900],
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 3,
+                            ),
+                            Text(
+                              feedTime,
+                              style:
+                                  TextStyle(fontSize: 15, color: Colors.grey),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.more_horiz,
+                        color: Colors.grey[600],
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  feedText,
+                  style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.grey[800],
+                      height: 1.5,
+                      letterSpacing: .7),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+              ],
+            ),
+          ),
+          // #photo
+          Container(
+            height: 240,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(feedImage),
+                fit: BoxFit.cover,
               ),
+            ),
+          ),
+          // #likes
+          SizedBox(
+            height: 20,
+          ),
+          Container(
+            padding: EdgeInsets.only(left: 10, right: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    makeLike(),
+                    Transform.translate(
+                      offset: Offset(-5, 0),
+                      child: makeLove(),
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      "2.5K",
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.grey[800],
+                      ),
+                    ),
+                  ],
+                ),
+                Text(
+                  '400 Comments',
+                  style: TextStyle(fontSize: 13, color: Colors.grey[800]),
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              makeLikeButton(isActive: true),
+              makeCommentButton(isActive: false),
+              makeShareButton(isActive: false),
+            ],
+          ),
+          SizedBox(
+            height: 10,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget makeLike() {
+    return Container(
+      width: 25,
+      height: 25,
+      decoration: BoxDecoration(
+          color: Colors.blue,
+          shape: BoxShape.circle,
+          border: Border.all(color: Colors.white)),
+      child: Center(
+        child: Icon(Icons.thumb_up, size: 14, color: Colors.white),
+      ),
+    );
+  }
+
+  Widget makeLove() {
+    return Container(
+      width: 25,
+      height: 25,
+      decoration: BoxDecoration(
+          color: Colors.red,
+          shape: BoxShape.circle,
+          border: Border.all(color: Colors.white)),
+      child: Center(
+        child: Icon(Icons.favorite, size: 14, color: Colors.white),
+      ),
+    );
+  }
+
+  Widget makeLikeButton({isActive}) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+      child: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.thumb_up, color: isActive ? Colors.blue : Colors.grey),
+            SizedBox(
+              width: 5,
+            ),
+            Text(
+              'Like',
+              style: TextStyle(color: isActive ? Colors.blue : Colors.grey),
             )
           ],
         ),
-    )
+      ),
+    );
+  }
+
+  Widget makeCommentButton({isActive}) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+      child: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.comment,
+              color: isActive ? Colors.blue : Colors.grey,
+              size: 18,
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Text(
+              'Comment',
+              style: TextStyle(color: isActive ? Colors.blue : Colors.grey),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget makeShareButton({isActive}) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+      child: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.share,
+              color: isActive ? Colors.blue : Colors.grey,
+              size: 18,
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Text(
+              'Comment',
+              style: TextStyle(color: isActive ? Colors.blue : Colors.grey),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
