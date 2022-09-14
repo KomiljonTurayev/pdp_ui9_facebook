@@ -449,6 +449,7 @@ class _HomePageState extends State<HomePage> {
             height: 8,
           ),
           Row(
+
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               makeLikeButton(isActive: true),
